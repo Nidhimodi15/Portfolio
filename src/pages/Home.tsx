@@ -1,14 +1,15 @@
 import { motion } from 'framer-motion';
 import { Download, Rocket, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { Link } from 'react-router-dom';
 
-const HeroSection = () => {
+const Home = () => {
   const techStack = ['Python', 'ML', 'AI', 'NLP', 'TensorFlow', 'LangChain'];
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 py-20">
       <div className="absolute inset-0 cyber-grid opacity-20" />
-      
+
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -22,7 +23,7 @@ const HeroSection = () => {
           className="mb-8 inline-block"
         >
           <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-r from-primary via-secondary to-accent p-1 animate-pulse-slow">
-            <div className="w-full h-full rounded-full bg-cyber-dark flex items-center justify-center neon-glow">
+            <div className="w-full h-full rounded-full bg-background flex items-center justify-center neon-glow">
               <span className="text-5xl font-bold text-gradient">PH</span>
             </div>
           </div>
@@ -68,22 +69,26 @@ const HeroSection = () => {
             <Download className="mr-2 group-hover:animate-bounce" />
             Download Resume
           </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-secondary text-secondary hover:bg-secondary/10 neon-glow-secondary group"
-          >
-            <Rocket className="mr-2 group-hover:animate-bounce" />
-            Explore Projects
-          </Button>
-          <Button
-            size="lg"
-            variant="outline"
-            className="border-accent text-accent hover:bg-accent/10 neon-glow-accent group"
-          >
-            <Mail className="mr-2 group-hover:animate-bounce" />
-            Contact Me
-          </Button>
+          <Link to="/projects">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-secondary text-secondary hover:bg-secondary/10 neon-glow-secondary group"
+            >
+              <Rocket className="mr-2 group-hover:animate-bounce" />
+              Explore Projects
+            </Button>
+          </Link>
+          <Link to="/contact">
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-accent text-accent hover:bg-accent/10 neon-glow-accent group"
+            >
+              <Mail className="mr-2 group-hover:animate-bounce" />
+              Contact Me
+            </Button>
+          </Link>
         </motion.div>
 
         <motion.div
@@ -105,8 +110,8 @@ const HeroSection = () => {
           ))}
         </motion.div>
       </motion.div>
-    </section>
+    </div>
   );
 };
 
-export default HeroSection;
+export default Home;
