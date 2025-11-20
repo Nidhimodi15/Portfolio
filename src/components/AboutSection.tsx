@@ -3,9 +3,9 @@ import { Code2, Database, Brain, Zap } from 'lucide-react';
 
 const AboutSection = () => {
   const highlights = [
-    { icon: Code2, text: 'Full Stack Development', color: 'text-primary' },
-    { icon: Brain, text: 'AI & Machine Learning', color: 'text-secondary' },
-    { icon: Database, text: 'Data Engineering', color: 'text-accent' },
+    { icon: Brain, text: 'AI & Machine Learning', color: 'text-primary' },
+    { icon: Code2, text: 'Data Science & Analytics', color: 'text-secondary' },
+    { icon: Database, text: 'NLP & LLMs', color: 'text-accent' },
     { icon: Zap, text: 'Automation Systems', color: 'text-primary' },
   ];
 
